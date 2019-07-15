@@ -1,4 +1,4 @@
-module.exports = (app)=>{
+module.exports = app => {
     const studentCtrll = require('../controllers/studentCtrl')
 
     app.post('/student', studentCtrll.createStudent);

@@ -1,16 +1,14 @@
 const express = require('express')
 const body_parser = require('body-parser')
-const mongoose = require('mongoose')
 const config = require('./config/config')
-require('./routes/studentRoutes')(app)
+const mongoose = require('mongoose')
+
+
 const app = express();
 
 app.use(body_parser.urlencoded({extended: true}))
 app.use(body_parser.json());
 
-app.get('/', (req, res)=>{
-    res.status(200).json({"message":"Welcome to api"})
-})
 
 app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Origin", "*");
@@ -19,9 +17,15 @@ app.use((req,res,next)=>{
     next();
 })
 //config files for database
+require('./routes/studentRoutes')(app)
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongodbURL, {useNewUrlParser: true}).then(()=>console.log("Successfully connected to DB")).catch(err=>{console.log(err); process.exit()})
 
+
+app.get('/', (req, res)=>{
+    res.status(200).json({"message":"Welcome to api"})
+})
 
 app.listen(config.serverPort, ()=> {
     console.log("server is listening...")
