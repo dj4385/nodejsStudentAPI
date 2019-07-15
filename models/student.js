@@ -6,7 +6,7 @@ const studentSchema = mongoose.Schema({
         trim: true,
         // require : true
     },
-    emial : {
+    email : {
         type: String,
         trim: true,
         // require : true
