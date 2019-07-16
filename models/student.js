@@ -6,6 +6,21 @@ const studentSchema = mongoose.Schema({
         trim: true,
         // require : true
     },
+    gender : {
+        type: String,
+        trim: true,
+        // require : true
+    },
+    dob : {
+        type: String,
+        trim: true,
+        // require : true
+    },
+    image : {
+        type: String,
+        trim: true,
+        // require : true
+    },
     email : {
         type: String,
         trim: true,

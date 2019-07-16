@@ -7,6 +7,9 @@ module.exports = {
        } else {
             const studentDetail = new studentModel({
                 name: req.body.name,
+                gender: req.body.gender,
+                dob: req.body.dob,
+                image: req.body.image,
                 email: req.body.email,
                 contactNo: req.body.contactNo,
                 address: req.body.address,
@@ -82,6 +85,9 @@ module.exports = {
         } else {
             studentModel.findByIdAndUpdate(req.params.studentID, {
                 name: req.body.name,
+                gender: req.body.gender,
+                dob: req.body.dob,
+                image: req.body.image,
                 email: req.body.email,
                 contactNo: req.body.contactNo,
                 address: req.body.address,
