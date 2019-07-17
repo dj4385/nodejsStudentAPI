@@ -1,9 +1,11 @@
-module.exports = app => {
-    const studentCtrll = require('../controllers/studentCtrl')
+const express = require('express')
+const route = express.Router();
+const studentCtrll = require('../controllers/studentCtrl')
 
-    app.post('/student', studentCtrll.createStudent);
-    app.get('/studentDetails', studentCtrll.findAllStudents);
-    app.get('/studentDetail/:studentID', studentCtrll.findOneStudents)
-    app.put('/updateStudentDetail/:studentID', studentCtrll.updateStudentDetail)
-    app.delete('/deleteStudent/:studentID', studentCtrll.deleteStudentDetail)
-}
+route.post('/student', studentCtrll.createStudent);
+route.get('/studentDetails', studentCtrll.findAllStudents);
+route.get('/studentDetail/:studentID', studentCtrll.findOneStudents)
+route.put('/updateStudentDetail/:studentID', studentCtrll.updateStudentDetail)
+route.delete('/deleteStudent/:studentID', studentCtrll.deleteStudentDetail)
+
+module.exports = route
