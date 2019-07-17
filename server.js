@@ -19,7 +19,7 @@ app.use((req,res,next)=>{
 })
 //config files for database
 // require('./routes/studentRoutes')(app)
-app.use('/api/v1',route)
+app.use('/v1',route)
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongodbURL, {useNewUrlParser: true}).then(()=>console.log("Successfully connected to DB")).catch(err=>{console.log(err); process.exit()})
