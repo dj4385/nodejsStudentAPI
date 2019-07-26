@@ -18,3 +18,6 @@ import routes to the main server file.
 Then enable cors....
 
 To start mongodb type this command :- sudo service mongod start
+
+
+POC of loginAPI using jwt or jtokken - follow the link : https://www.codementor.io/olatundegaruba/5-steps-to-authenticating-node-js-with-jwt-7ahb5dmyr
