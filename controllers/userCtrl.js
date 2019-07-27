@@ -40,7 +40,7 @@ module.exports = {
                 } else if(!user){
                     res.status(401).json({"message": "Authentication Failed. User not found "})
                 } else if(user){
-                    if(!userModel.password(req.body.password)){
+                    if(!user.comparePassword(req.body.password)){
                         res.status(401).json({"message":"Invalid Password"})
                     } else {
                         return res.json({token: jwt.sign({email: userModel.email, fullName : userModel.fullName, _id : user._id},'RESTFULAPIs')})
